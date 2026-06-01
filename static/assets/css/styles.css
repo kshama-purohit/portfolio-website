@@ -487,3 +487,11 @@ img{
         right: 24%;
     }
 }
+@keyframes floatUp {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.75; }
+  90% { opacity: 0.75; }
+  100% { transform: translateY(-400px) rotate(360deg); opacity: 0; }
+}
+
+.home { position: relative; overflow: hidden; }

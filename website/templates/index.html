@@ -175,5 +175,28 @@
 
         <!--===== MAIN JS =====-->
         <script src="{% static 'assets/js/main.js' %}"></script>
+        <script>
+        const emojis = ['🪩','🐱','☕','💗','✨','💻','⚙️','🤖','🌐','🎀','💾','👾','🔗','🍵','💫','⌨️','🛠️'];
+        const hero = document.querySelector('.home');
+
+        function spawnEmoji() {
+        const el = document.createElement('span');
+        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        el.style.cssText = `
+            position: absolute;
+            font-size: ${1.2 + Math.random() * 1.2}rem;
+            left: ${Math.random() * 90}%;
+            bottom: -50px;
+            opacity: 0;
+            animation: floatUp ${4 + Math.random() * 4}s linear forwards;
+            pointer-events: none;
+            z-index: 1;
+        `;
+        hero.appendChild(el);
+        setTimeout(() => el.remove(), 8000);
+        }
+
+        setInterval(spawnEmoji, 600);
+        </script>
     </body>
 </html>
